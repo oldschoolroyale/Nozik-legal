@@ -1,0 +1,14 @@
+# Настройки сайта с юридическими документами Nozik (GitHub Pages + Jekyll).
+# Данные ниже подставляются во все документы на всех языках: меняйте их только здесь.
+title: Nozik
+developer: "Shohsulton"
+developer_en: "Shohsulton"
+developer_uz: "Shohsulton"
+email: "bolahavoadmin@gmail.com"
+effective_date_ru: "27 ноября 2026 г."
+effective_date_en: "November 27, 2026"
+effective_date_uz: "2026-yil 27-noyabr"
+baseurl: "/Nozik-legal"
+markdown: kramdown
+exclude:
+  - README.md
