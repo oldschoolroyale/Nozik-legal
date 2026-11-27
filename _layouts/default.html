@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="{{ page.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} · Nozik</title>
+  <meta name="description" content="{{ page.title }} — Nozik">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#FBF7FA; --surface:#FFFFFF; --text:#2B1E29; --muted:#6E5D6B; --primary:#7A3E6E; --line:#EADFE7; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#1C1519; --surface:#261D23; --text:#F3EAF0; --muted:#BBA8B6; --primary:#E3A9D6; --line:#3A2D36; } }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.6 Manrope, system-ui, sans-serif; }
+    main { max-width:760px; margin:0 auto; padding:24px 16px 64px; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:24px; }
+    .brand { font-weight:700; font-size:20px; color:var(--primary); text-decoration:none; }
+    nav a { color:var(--muted); text-decoration:none; margin-left:12px; font-weight:600; font-size:14px; }
+    nav a.active { color:var(--primary); }
+    article { background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:24px 20px; }
+    h1 { font-size:26px; line-height:1.25; margin:0 0 4px; }
+    h2 { font-size:19px; margin:28px 0 8px; }
+    .date { color:var(--muted); font-size:14px; margin:0 0 16px; }
+    a { color:var(--primary); }
+    ul { padding-left:20px; }
+    li { margin:4px 0; }
+    .note { border-left:3px solid var(--primary); padding:8px 14px; background:var(--bg); border-radius:0 12px 12px 0; }
+    footer { color:var(--muted); font-size:13px; text-align:center; margin-top:24px; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <a class="brand" href="{{ site.baseurl }}/">Nozik</a>
+    <nav>
+      {% assign doc = page.doc %}
+      <a href="{{ site.baseurl }}/uz/{{ doc }}.html" {% if page.lang == 'uz' %}class="active"{% endif %}>Oʻzbekcha</a>
+      <a href="{{ site.baseurl }}/ru/{{ doc }}.html" {% if page.lang == 'ru' %}class="active"{% endif %}>Русский</a>
+      <a href="{{ site.baseurl }}/en/{{ doc }}.html" {% if page.lang == 'en' %}class="active"{% endif %}>English</a>
+    </nav>
+  </header>
+  <article>
+    {{ content }}
+  </article>
+  <footer>© {{ site.time | date: "%Y" }} Nozik</footer>
+</main>
+</body>
+</html>
